@@ -1,78 +1,54 @@
 import './styles.css'
-import iconRemove from './assets/icon-remove.svg';
+import TagBox from './components/TagBox';
+import Job from './components/Job';
+import data from './assets/data.json';
+import { useState } from 'react';
+
 
 function App() {
+
+  const [Tags, setTags] = useState([]);
+
+  const filterCheck = (
+    (job) => {
+      if (!Tags.length) return true
+      else {
+        let jobTags = job.languages.concat(job.tools);
+        jobTags.push(job.role);
+        jobTags.push(job.level);
+        let encontrado=false;
+        jobTags.map(jobtag => {
+          if (Tags.find(tag => tag === jobtag)){
+          // console.log('encontrado')
+            encontrado =true;
+          }
+        })
+        if (encontrado) return true
+      }
+    }
+  );
+
+  const Jobs = data?.filter(filterCheck)
+    .map(job =>
+      <Job key={job.id} data={job} Tags={Tags} setTags={setTags} />
+    )
+
+
   return (
-    <>
+    <div id='app'>
       <div id="header"></div>
 
       <div id="container">
 
-        <div id="tagBox">
-          <div className="tags-field">
-            <div className="filter-tag">
-              <p className="filter-name">Frontend</p>
-              <button className="filter-cancel"><img src={ iconRemove } alt="close"></img></button>
-            </div>
+        <TagBox Tags={Tags} setTags={setTags} />
 
-            <div className="filter-tag">
-              <p className="filter-name">Frontend</p>
-              <button className="filter-cancel"><img src={ iconRemove } alt="close"></img></button>
-            </div>
-
-            <div className="filter-tag">
-              <p className="filter-name">Full Stack devops</p>
-              <button className="filter-cancel"><img src={ iconRemove } alt="close"></img></button>
-            </div>
-            <div className="filter-tag">
-              <p className="filter-name">Java</p>
-              <button className="filter-cancel"><img src={ iconRemove } alt="close"></img></button>
-            </div>
-          </div>
-          <div>
-            <button id="clear-filter">
-              <p>Clear</p>
-            </button>
-          </div>
-        </div>
-
-        <div className="job-box">
-          <div className="job-info">
-            <img className="job-icon" src="./assets/photosnap.svg" alt="job icon"></img>
-
-            <div className="job-details">
-              <div className="job-company">
-                <p className="c-name">Photosnap</p>
-                <p className="c-new">NEW!</p>
-                <p className="c-featured">FEATURED</p>
-              </div>
-              <p className="job-name">Senior Frontend Developer</p>
-              <div className="job-foot">
-                <p>1d ago</p>
-                <span className="circle"></span>
-                <p>Full Time</p>
-                <span className="circle"></span>
-                <p>USA only</p>
-              </div>
-            </div>
-          </div>
-          <div className="job-tag-field">
-            <div>
-              <p>Frontend</p>
-            </div>
-
-            <p>Senior</p>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>Javascript</p>
-          </div>
-        </div>
-
+        {Jobs}
 
 
       </div>
-    </>
+    </div>
   );
 }
+
 
 export default App;

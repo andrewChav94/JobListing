@@ -11,9 +11,9 @@ const FilterTag = (props) => {
     }
 
     return(
-        <div className="filter-tag">
+        <div className="filter-tag" onClick={ removeClick }>
                     <p className="filter-name">{ props.tag }</p>
-                    <button className="filter-cancel"><img src={iconRemove} alt="close" onClick={ removeClick }></img></button>
+                    <button className="filter-cancel"><img src={iconRemove} alt="close" ></img></button>
                 </div>
     );
 

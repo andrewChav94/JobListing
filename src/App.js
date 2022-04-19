@@ -11,18 +11,22 @@ function App() {
 
   const filterCheck = (
     (job) => {
+
       if (!Tags.length) return true
+
       else {
         let jobTags = job.languages.concat(job.tools);
         jobTags.push(job.role);
         jobTags.push(job.level);
-        let encontrado=false;
-        jobTags.map(jobtag => {
-          if (Tags.find(tag => tag === jobtag)){
-          // console.log('encontrado')
-            encontrado =true;
+
+        let encontrado = false;
+
+        for (let jobtag of jobTags) {
+          if (Tags.includes(jobtag)) {
+            encontrado = true;
           }
-        })
+        }
+
         if (encontrado) return true
       }
     }
@@ -43,7 +47,6 @@ function App() {
         <TagBox Tags={Tags} setTags={setTags} />
 
         {Jobs}
-
 
       </div>
     </div>

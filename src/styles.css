@@ -96,6 +96,16 @@ body{
     overflow: hidden;
 }
 
+.filter-tag:hover .filter-cancel{
+    cursor: pointer;
+    background-color: var(--VeryDarkCyan);
+}
+.filter-tag:hover {
+    cursor: pointer;
+
+}
+
+
 .filter-name {
     margin: 10px 5px;
     font-weight: 600;
@@ -110,10 +120,7 @@ body{
     padding: 0 0.4rem;
 }
 
-.filter-cancel:hover{
-    cursor: pointer;
-    background-color: var(--VeryDarkCyan);
-}
+
 
 #clear-filter{
     margin: 0 1.5rem 0 0.2rem;

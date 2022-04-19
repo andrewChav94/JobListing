@@ -2,8 +2,8 @@ import React from "react";
 
 const JobTag = (props) => {
 
-    const handleClick = () => {
-       
+    const handleClick = () => {     
+
         let newTags = props.Tags.filter(tag => tag === props.tag ? false : true);
 
         if (props.Tags.length === newTags.length)

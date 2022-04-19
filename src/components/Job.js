@@ -31,22 +31,18 @@ const Job = (props) => {
 
                 <JobTag
                     tag={props.data.role}
-                    Tags={props.Tags}
-                    setTags={props.setTags}
                 />
 
                 <JobTag
                     tag={props.data.level}
-                    Tags={props.Tags}
-                    setTags={props.setTags}
+                   
                 />
 
                 {props.data.languages.map((tag, i) => 
                     
                         <JobTag key={i}
                             tag={tag}
-                            Tags={props.Tags}
-                            setTags={props.setTags}
+                           
                         />
                 )}
 
@@ -54,8 +50,7 @@ const Job = (props) => {
                     
                         <JobTag key={i}
                             tag={tag}
-                            Tags={props.Tags}
-                            setTags={props.setTags}
+                           
                         />
                 )}
             </div>

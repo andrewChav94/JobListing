@@ -1,18 +1,24 @@
+import React, { useEffect } from 'react';
 import './styles.css'
 import TagBox from './components/TagBox';
 import Job from './components/Job';
 import data from './assets/data.json';
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateJobs } from './features/jobsSlice';
 
 
 function App() {
 
-  const [Tags, setTags] = useState([]);
+  const rTags = useSelector((state) => state.tags.value);
+  const rJobs = useSelector((state) => state.jobs.jobs);
+  const dispatch = useDispatch();
+
+  
 
   const filterCheck = (
     (job) => {
 
-      if (!Tags.length) return true
+      if (!rTags.length) return true
 
       else {
         let jobTags = job.languages.concat(job.tools);
@@ -22,7 +28,7 @@ function App() {
         let encontrado = false;
 
         for (let jobtag of jobTags) {
-          if (Tags.includes(jobtag)) {
+          if (rTags.includes(jobtag)) {
             encontrado = true;
           }
         }
@@ -32,10 +38,16 @@ function App() {
     }
   );
 
-  const Jobs = data?.filter(filterCheck)
-    .map(job =>
-      <Job key={job.id} data={job} Tags={Tags} setTags={setTags} />
-    )
+  useEffect(()=>{
+
+    const newJobs = data?.filter(filterCheck);
+    dispatch(updateJobs(newJobs))
+    
+  },[rTags, dispatch]);
+
+  const Jobs = rJobs?.map(job =>
+      <Job key={job.id} data={job}/>
+    );
 
 
   return (
@@ -44,7 +56,7 @@ function App() {
 
       <div id="container">
 
-        <TagBox Tags={Tags} setTags={setTags} />
+        <TagBox />
 
         {Jobs}
 

@@ -1,13 +1,16 @@
 import React from "react";
 import iconRemove from '../assets/icon-remove.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteTag } from '../features/tagsSlice';
 
 const FilterTag = (props) => {
+    const rTags = useSelector((state) => state.tags.value);
+    const dispatch = useDispatch();
 
     const removeClick= () => {
         
-        let newTags = props.Tags.filter(tag => tag === props.tag ? false : true);
-            
-        props.setTags(newTags);
+        const index=rTags.indexOf(props.tag);
+        dispatch(deleteTag(index));
     }
 
     return(

@@ -1,12 +1,17 @@
 import React from 'react';
 import FilterTag from './FilterTag';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearTags } from '../features/tagsSlice';
+
 
 const TagBox = (props) => {
+    const rTags = useSelector((state) => state.tags.value);
+    const dispatch = useDispatch();
 
-    const Tags=props.Tags.map(tag => <FilterTag key={tag} tag={tag} Tags={props.Tags} setTags={props.setTags} />);
+    const Tags=rTags.map(tag => <FilterTag key={tag} tag={tag}/>);
 
     const clearFilter = () => {
-        props.setTags([]);
+        dispatch(clearTags());
     }
 
     return (

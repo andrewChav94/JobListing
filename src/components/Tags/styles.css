@@ -1,0 +1,98 @@
+/* TAG BOX */
+#tagBox {
+
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    min-width: 250px;
+    min-height: 60px;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    box-shadow: 5px 10px 40px var(--ShadowCyan);
+    margin-bottom: 0.5rem;
+}
+
+.tags-field {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    
+}
+
+.filter-tag {
+    margin: 0;
+    background: var(--LightFilterCyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin: 0.5rem 0.5rem;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.filter-tag:hover .filter-cancel{
+    cursor: pointer;
+    background-color: var(--VeryDarkCyan);
+}
+.filter-tag:hover {
+    cursor: pointer;
+
+}
+
+
+.filter-name {
+    margin: 10px 5px;
+    font-weight: 600;
+    color: var(--DesaturatedDarkCyan);
+}
+
+.filter-cancel{
+    background: var(--DesaturatedDarkCyan);
+    border: none;
+    width: 30px;
+    height: 100%;
+    padding: 0 0.4rem;
+}
+
+
+
+#clear-filter{
+
+    margin: 0 1.5rem 0 0.2rem;
+    font-weight: 600;
+    color: var(--DesaturatedDarkCyan);
+    background: none;
+    border: none;
+    /* width: 100%; */
+    height: 100%;
+    font-size: 17px;
+    font-family: Spartan;
+}
+
+#clear-filter p{
+    margin: 0;
+}
+
+#clear-filter:hover{
+    cursor: pointer;
+    border-bottom:  2px solid var(--DesaturatedDarkCyan);
+}
+
+.popover{
+    font-weight: 700;
+    color: var(--DesaturatedDarkCyan);
+  
+  }
+/* TAG BOX */

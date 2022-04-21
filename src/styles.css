@@ -1,7 +1,9 @@
-@font-face{
+@font-face {
     font-family: Spartan;
     src: url('./assets/LeagueSpartan-VariableFont_wght.ttf');
 }
+
+
 
 :root {
     --DesaturatedDarkCyan: hsl(180, 29%, 50%);
@@ -12,16 +14,18 @@
     --VeryDarkCyan: hsl(180, 14%, 20%);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background: var(--LigtBGCyan);
+    font-family: Spartan;
+    font-size: 15px;
 }
 
-#app {
+/* #app {
     text-align: center;
     margin: 0 auto ;
     padding: 0;
@@ -32,18 +36,18 @@ body{
     flex-direction: column;
     max-width: 1440px;
     box-sizing: border-box;
-}
+} */
 
 #header {
     height: 156px;
     width: 100%;
     background: var(--DesaturatedDarkCyan);
     background-image: url("./assets/bg-header-desktop.svg");
-    position:fixed;
+    position: fixed;
     z-index: -1;
 }
 
-#container{
+#container {
     display: flex;
     width: 100%;
     height: auto;
@@ -52,219 +56,19 @@ body{
     padding-top: 120px;
 }
 
-/* TAG BOX */
-#tagBox {
-
-    background-color:white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 75%;
-    min-width: 250px;
-    min-height: 60px;
-    border-radius: 0.3rem;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    -o-border-radius: 0.3rem;
-    box-shadow: 5px 10px 40px var(--ShadowCyan);
+.no-tag-box {
+    height: 60px;
     margin-bottom: 0.5rem;
 }
 
-.tags-field {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 1rem;
-    flex-wrap: wrap;
-    
+/* ANT DESIGN */
+
+.space {
+    display: flex !important;
+    padding-top: 120px !important;
 }
 
-.filter-tag {
-    background: var(--LightFilterCyan);
+.ant-space-item {
     display: flex;
-    /* height: 100%;
-    width: 100%; */
     justify-content: center;
-    align-items: center;
-    height: 30px;
-    margin: 0.5rem 0.5rem;
-    border-radius: 0.2rem;
-    -webkit-border-radius: 0.2rem;
-    -moz-border-radius: 0.2rem;
-    -ms-border-radius: 0.2rem;
-    -o-border-radius: 0.2rem;
-    overflow: hidden;
 }
-
-.filter-tag:hover .filter-cancel{
-    cursor: pointer;
-    background-color: var(--VeryDarkCyan);
-}
-.filter-tag:hover {
-    cursor: pointer;
-
-}
-
-
-.filter-name {
-    margin: 10px 5px;
-    font-weight: 600;
-    color: var(--DesaturatedDarkCyan);
-}
-
-.filter-cancel{
-    background: var(--DesaturatedDarkCyan);
-    border: none;
-    width: 30px;
-    height: 100%;
-    padding: 0 0.4rem;
-}
-
-
-
-#clear-filter{
-    margin: 0 1.5rem 0 0.2rem;
-    font-weight: 600;
-    color: var(--DesaturatedDarkCyan);
-    background: none;
-    border: none;
-    /* width: 100%; */
-    height: 100%;
-    font-size: 17px;
-    font-family: Spartan;
-}
-
-#clear-filter:hover{
-    cursor: pointer;
-    border-bottom:  2px solid var(--DesaturatedDarkCyan);
-}
-/* TAG BOX */
-
-/* JOBS */
-.job-box{
-    background-color:white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 75%;
-    min-width: 250px;
-    min-height: 100px;
-    border-radius: 0.3rem;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    -o-border-radius: 0.3rem;
-    box-shadow: 5px 10px 40px var(--ShadowCyan);
-    margin: 0.5rem 0;
-}
-
-.job-box:hover{
-border-left: 5px solid var(--DesaturatedDarkCyan);
-}
-
-.job-icon{
-    width: 70px;
-    height: auto;
-}
-
-.job-info{
-    margin: 1rem 1rem 1rem 2rem;
-    display: flex;
-    align-items: center;
-    min-width: 350px;
-}
-
-.job-details{
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    height: 70px;
-}
-
-.job-company, .job-foot{
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-}
-
-.job-foot *{
-    margin-right: 8px;
-    font-weight: 500;
-    color: var(--DarkCyan);
-}
-
-.c-name{
-    font-weight: bold;
-    font-size: medium;
-    margin-right: 1rem;
-    color: var(--DesaturatedDarkCyan);
-}
-
-.c-new, .c-featured {
-    font-size: small;
-    padding: 5px;
-    border-radius: 20%;
-}
-
-.c-new{
-    margin-right: 1rem;
-    background-color: var(--DesaturatedDarkCyan);
-    color: white;
-}
-
-.c-featured{
-    background-color: var(--VeryDarkCyan);
-    color: white;
-}
-
-.job-name{
-    text-align: left;
-    font-weight: bold;
-    color: var(--VeryDarkCyan);
-    font-size: larger;
-}
-
-.circle:before {
-    content: ' \25CF';
-    font-size: 10px;
-  }
-
-.job-tag-field{
-    display: flex;
-}
-
-.job-tag-field{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    padding-right: 0.5rem;
-   
-}
-
-.job-tag-field span{
-    background: var(--LightFilterCyan);
-    color: var(--DesaturatedDarkCyan);
-    font-weight:600;
-    height: 20px;
-    padding: 0.2rem 0.5rem ;
-    margin: 0.3rem 0.3rem;
-    border-radius: 0.4rem;
-    -webkit-border-radius: 0.4rem;
-    -moz-border-radius: 0.4rem;
-    -ms-border-radius: 0.4rem;
-    -o-border-radius: 0.4rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.job-tag-field span:hover{
-    color: var(--LightFilterCyan);
-    background: var(--DesaturatedDarkCyan);
-    cursor: pointer;
-}
-
-/* JOBS */

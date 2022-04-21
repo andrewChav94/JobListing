@@ -5,7 +5,7 @@ import Job from "./components/Job/Job";
 import data from "./assets/data.json";
 import { useSelector, useDispatch } from "react-redux";
 import { updateJobs } from "./features/jobsSlice";
-import { Space, Card } from "antd";
+import { Space } from "antd";
 import "antd/dist/antd.css";
 
 function App() {
@@ -39,29 +39,16 @@ function App() {
 
   const Jobs = rJobs?.map((job) => <Job key={job.id} data={job} />);
 
-  // return (
-  //   <div id='app'>
-  //     <div id="header"></div>
-
-  //     <div id="container">
-
-  //       <TagBox />
-
-  //       {Jobs}
-
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <>
       <div id="header"></div>
       <Space direction="vertical" className="space" size="small">
 
-        
-      { rTags.length ? 
-        <TagBox /> : <div className="no-tag-box"></div>
-      }
+
+        {rTags.length ?
+          <TagBox /> : <div className="no-tag-box"></div>
+        }
 
 
         {Jobs}

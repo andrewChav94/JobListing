@@ -1,7 +1,7 @@
 /* TAG BOX */
 #tagBox {
 
-    background-color:white;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,7 @@
     justify-content: flex-start;
     padding: 0 1rem;
     flex-wrap: wrap;
-    
+
 }
 
 .filter-tag {
@@ -42,10 +42,11 @@
     overflow: hidden;
 }
 
-.filter-tag:hover .filter-cancel{
+.filter-tag:hover .filter-cancel {
     cursor: pointer;
     background-color: var(--VeryDarkCyan);
 }
+
 .filter-tag:hover {
     cursor: pointer;
 
@@ -58,7 +59,7 @@
     color: var(--DesaturatedDarkCyan);
 }
 
-.filter-cancel{
+.filter-cancel {
     background: var(--DesaturatedDarkCyan);
     border: none;
     width: 30px;
@@ -68,7 +69,7 @@
 
 
 
-#clear-filter{
+#clear-filter {
 
     margin: 0 1.5rem 0 0.2rem;
     font-weight: 600;
@@ -81,18 +82,19 @@
     font-family: Spartan;
 }
 
-#clear-filter p{
+#clear-filter p {
     margin: 0;
 }
 
-#clear-filter:hover{
+#clear-filter:hover {
     cursor: pointer;
-    border-bottom:  2px solid var(--DesaturatedDarkCyan);
+    border-bottom: 2px solid var(--DesaturatedDarkCyan);
 }
 
-.popover{
+.popover {
     font-weight: 700;
     color: var(--DesaturatedDarkCyan);
-  
-  }
+
+}
+
 /* TAG BOX */

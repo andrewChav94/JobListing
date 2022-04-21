@@ -8,16 +8,16 @@ import { Popover } from "antd";
 
 const popHelp = (
     <div className="popover">
-      <p>Clear filters</p>
+        <p>Clear filters</p>
     </div>
-  );
+);
 
 
 const TagBox = (props) => {
     const rTags = useSelector((state) => state.tags.value);
     const dispatch = useDispatch();
 
-    const Tags=rTags.map(tag => <FilterTag key={tag} tag={tag}/>);
+    const Tags = rTags.map(tag => <FilterTag key={tag} tag={tag} />);
 
     const clearFilter = () => {
         dispatch(clearTags());
@@ -26,13 +26,13 @@ const TagBox = (props) => {
     return (
         <div id="tagBox">
             <div className="tags-field">
-                { Tags }
+                {Tags}
             </div>
             <div>
-            <Popover content={ popHelp }>
-                <button id="clear-filter" onClick={ clearFilter }>
-                    <p>Clear</p>
-                </button>
+                <Popover content={popHelp}>
+                    <button id="clear-filter" onClick={clearFilter}>
+                        <p>Clear</p>
+                    </button>
                 </Popover>
             </div>
         </div>

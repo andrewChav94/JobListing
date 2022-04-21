@@ -6,9 +6,9 @@ import { Popover } from "antd";
 
 const popHelp = (
     <div className="popover">
-      <p>Add/Remove Tag</p>
+        <p>Add/Remove Tag</p>
     </div>
-  );
+);
 
 const JobTag = (props) => {
     const rTags = useSelector((state) => state.tags.value);
@@ -17,7 +17,7 @@ const JobTag = (props) => {
     const handleClick = () => {
 
         // let newTags = rTags.filter(tag => tag === props.tag ? false : true);
-        const index=rTags.indexOf(props.tag);
+        const index = rTags.indexOf(props.tag);
         if (index > -1)
             dispatch(deleteTag(index));
         else
@@ -25,8 +25,8 @@ const JobTag = (props) => {
     };
 
     return (
-        <Popover content={ popHelp }>
-        <span onClick={handleClick}> {props.tag}</span>
+        <Popover content={popHelp}>
+            <span onClick={handleClick}> {props.tag}</span>
         </Popover>
     );
 
